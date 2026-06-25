@@ -1,0 +1,10 @@
+# design-central — local / not-published working areas
+
+# internal merch planning — no real merch yet; un-ignore when there is
+merch/
+
+# personal-only experiments — never published (kept out of the public tree by construction)
+_personal/
+
+# agent-local
+.claude/
