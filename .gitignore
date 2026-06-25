@@ -8,3 +8,7 @@ _personal/
 
 # agent-local
 .claude/
+
+# build toolchain + derived raster exports (regenerate with: npm run build:assets)
+node_modules/
+brand/exports/
