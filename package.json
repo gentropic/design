@@ -5,7 +5,8 @@
   "type": "module",
   "description": "GCU design central — brand, system, conventions, landing.",
   "scripts": {
-    "build:assets": "node brand/build-assets.mjs"
+    "build:assets": "node brand/build-assets.mjs",
+    "build:site": "node build-site.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.1"

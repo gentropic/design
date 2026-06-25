@@ -12,3 +12,4 @@ _personal/
 # build toolchain + derived raster exports (regenerate with: npm run build:assets)
 node_modules/
 brand/exports/
+dist/
