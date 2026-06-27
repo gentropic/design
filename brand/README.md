@@ -25,6 +25,12 @@ GCU brand assets — logos, favicons, and the **malleo** (*Computatro et Malleo*
 | `gcu-favicon-32-transparent.svg` | 32px, transparent bg |
 | `gcu-favicon-16-transparent.svg` | 16px, transparent bg |
 
+## Product marks
+
+| File | Description |
+|---|---|
+| `accountable-icon.svg` | **Accountable** (`@gcu/accountable`) — nested forward chevrons `>>`, copper `#d97a3c` lead + blue `#2E86C1` trail. The outbound-fetch broker extension (auditable's sibling). |
+
 ## Asset tooling
 
 - `preview.html` — visual preview of all assets, with PNG export + sticker sizing.

@@ -29,6 +29,7 @@ const JOBS = [
   { svg: 'gcu-logo-square.svg', widths: [512, 1024] },
   { svg: 'gcu-malleo.svg', widths: [600, 1200] },
   { svg: 'gcu-malleo-noborder.svg', widths: [600, 1200] },
+  { svg: 'accountable-icon.svg', widths: [16, 32, 48, 128] }, // @gcu/accountable extension mark
 ];
 
 // Prefer the Playwright-managed Chromium (`npx playwright install chromium`); fall back to a
