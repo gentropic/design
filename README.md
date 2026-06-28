@@ -4,6 +4,10 @@ The Geoscientific Chaos Union's design home — visual identity, the design syst
 landing page, and a showcase of previous (and, ahead, current) work. Live at
 [gentropic.org](https://gentropic.org).
 
+This is the **canonical, public-facing** design home — not a scratchpad. The design *system*
+itself (switchboard) is canonical in the **auditable** repo; drafting and experiments happen in the
+working repos. Things land here only when they're ready to be *seen*.
+
 ## Layout
 
 - **`brand/`** — logos, favicons, the malleo; the reproducible asset build.

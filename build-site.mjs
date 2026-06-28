@@ -6,7 +6,7 @@
 //
 //   npm run build:site      →  dist/{index.html, switchboard.css, *.svg, _preview.png}
 
-import { readFile, writeFile, mkdir, copyFile, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, copyFile, cp, rm } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { chromium } from 'playwright';
@@ -29,6 +29,19 @@ let html = await readFile(path.join(ROOT, 'landing', 'index.html'), 'utf8');
 html = html.replaceAll('../system/', '').replaceAll('../brand/', '');
 await writeFile(path.join(DIST, 'index.html'), html);
 console.log('Assembled dist/ — index.html, switchboard.css, gcu-favicon-32.svg, gcu-logo-icon.svg');
+
+// 3b. previous/ showcase → dist/previous/. Its refs point one level up at the deployed
+// root (../system|../brand → ../), where switchboard.css + the favicon already land. Its
+// own assets (img/, the preserved digikom app) copy alongside. The live embeds are absolute
+// endarthur.github.io URLs, so they need nothing here.
+await mkdir(path.join(DIST, 'previous'), { recursive: true });
+let prev = await readFile(path.join(ROOT, 'previous', 'index.html'), 'utf8');
+prev = prev.replaceAll('../system/', '../').replaceAll('../brand/', '../');
+await writeFile(path.join(DIST, 'previous', 'index.html'), prev);
+for (const dir of ['img', 'digikom']) {
+  await cp(path.join(ROOT, 'previous', dir), path.join(DIST, 'previous', dir), { recursive: true });
+}
+console.log('Assembled dist/previous/ — index.html + img/ + digikom/');
 
 // 4. preview — render the assembled landing headlessly + screenshot
 async function launchBrowser() {

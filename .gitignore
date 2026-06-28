@@ -13,3 +13,6 @@ _personal/
 node_modules/
 brand/exports/
 dist/
+
+# throwaway local render captures (Playwright preview snapshots — regenerate as needed)
+previous/_*.png
